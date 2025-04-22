@@ -13,6 +13,7 @@ import Payments from "./components/Payments";
 import Setting from "./components/Setting";
 import Discount from "./components/Discount";
 import Analytics from "./components/Analytics";
+import Notification from "./components/Notification";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -41,6 +42,7 @@ export default function Home() {
     setting: <Setting />,
     discount: <Discount />,
     analytics: <Analytics />,
+    notifications: <Notification />,
   };
 
   return (
