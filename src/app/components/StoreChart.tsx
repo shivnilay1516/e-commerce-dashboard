@@ -13,7 +13,8 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { useRef, useEffect, useState } from "react";
-import type { ChartJSOrUndefined } from "react-chartjs-2/dist/types";
+import { Chart as ChartJSInstance } from "chart.js";
+
 
 ChartJS.register(
   CategoryScale,
@@ -26,7 +27,7 @@ ChartJS.register(
 );
 
 export default function MonthlyChart() {
-  const chartRef = useRef<ChartJSOrUndefined<"line">>(undefined);
+  const chartRef = useRef<ChartJSInstance<"line"> | null>(null);
   const [gradientOnline, setGradientOnline] = useState<CanvasGradient | null>(
     null
   );

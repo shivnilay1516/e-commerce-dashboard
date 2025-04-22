@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import type { ReactElement } from "react";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard";
@@ -30,7 +31,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const COMPONENTS_MAP: { [key: string]: JSX.Element } = {
+  const COMPONENTS_MAP: { [key: string]: ReactElement } = {
     dashboard: <Dashboard />,
     customer: <Customer />,
     products: <Products />,
