@@ -63,7 +63,7 @@ const Setting = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-200 bg-gray-100 p-2 rounded focus:outline-none"
+                  className="border border-gray-200 bg-gray-100 p-2 rounded focus:outline-none text-gray-500"
                 >
                   <option value="united-state">United State</option>
                   <option value="india">India</option>
@@ -78,12 +78,12 @@ const Setting = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-200 bg-gray-100 p-2 rounded focus:outline-none"
+                  className="border border-gray-200 bg-gray-100 p-2 rounded focus:outline-none text-gray-500"
                 >
                   <option value="united-state">US Doller $</option>
-                  <option value="india">India </option>
-                  <option value="russia">Russia</option>
-                  <option value="china">China</option>
+                  <option value="india">Rupee ₹ </option>
+                  <option value="russia">Russia ₽</option>
+                  <option value="china">China CN¥</option>
                 </select>
               </div>
               <div className="mb-6 flex flex-col">
@@ -130,6 +130,7 @@ const Setting = () => {
                 </label>
                 <input
                   id="current-password"
+                  placeholder="current password"
                   type={showCurrentPassword ? "text" : "password"}
                   className="border border-gray-200 bg-gray-100 p-2 rounded pr-10 focus:outline-none"
                 />
@@ -150,6 +151,7 @@ const Setting = () => {
                 </label>
                 <input
                   id="new-password"
+                  placeholder="new password"
                   type={showNewPassword ? "text" : "password"}
                   className="border border-gray-200 bg-gray-100 p-2 rounded pr-10 focus:outline-none"
                 />
@@ -170,6 +172,7 @@ const Setting = () => {
                 </label>
                 <input
                   id="confirm-password"
+                  placeholder="confirm password"
                   type={showConfirmPassword ? "text" : "password"}
                   className="border border-gray-200 bg-gray-100 p-2 rounded pr-10 focus:outline-none"
                 />
