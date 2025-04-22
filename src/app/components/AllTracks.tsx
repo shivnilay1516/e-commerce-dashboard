@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { BsListTask } from "react-icons/bs";
-import StoreChart from "./StoreChart.tsx";
+import StoreChart from "./StoreChart";
 
 const AllTracks = () => {
   return (
