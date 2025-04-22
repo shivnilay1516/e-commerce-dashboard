@@ -2,6 +2,10 @@ import React from "react";
 import Link from "next/link";
 import { FiMaximize2 } from "react-icons/fi";
 import SaledData from "./SaledData";
+import AverageOrderValueCard from "./AverageOrderValueCard";
+import SessionsOverTime from "./SessionsOverTime";
+import ConversionRate from "./ConversionRate";
+import ConversionRateBreakdownCard from "./ConversionRateBreakdownCard";
 
 const Analytics = () => {
   return (
@@ -84,6 +88,53 @@ const Analytics = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="bg-white p-4 rounded border border-gray-200 h-80 flex flex-col">
             <h3 className="text-sm font-medium text-gray-700 mb-4">
+              Total sales by sales channel
+            </h3>
+            <p className="text-sm text-gray-400 justify-center items-center flex h-full">
+              There was no data found for this date range
+            </p>
+          </div>
+          <AverageOrderValueCard
+            value={0}
+            date="21 Apr 2025"
+            dataPoints={[0, 0, 0, 0, 0, 0, 0]} // Adjust with real data
+          />
+          <div className="bg-white p-4 rounded border border-gray-200 h-80 flex flex-col">
+            <h3 className="text-sm font-medium text-gray-700 mb-4">
+              Total sales by product
+            </h3>
+            <p className="text-sm text-gray-400 justify-center items-center flex h-full">
+              There was no data found for this date range
+            </p>
+          </div>
+          <SessionsOverTime
+            value={0}
+            date="21 Apr 2025"
+            dataPoints={[0, 0, 0, 0, 0, 0, 0]}
+          />
+          <ConversionRate
+            value={0}
+            date="21 Apr 2025"
+            dataPoints={[0, 0, 0, 0, 0, 0, 0]}
+          />
+
+          <ConversionRateBreakdownCard
+            totalRate={0}
+            items={[
+              { label: "Sessions", percentage: 0, value: 0, delta: 0 },
+              { label: "Added to ...", percentage: 0, value: 0, delta: 0 },
+              { label: "Reached ...", percentage: 0, value: 0, delta: 0 },
+              {
+                label: "Completed ...",
+                percentage: 0,
+                value: 0,
+                delta: 0,
+              },
+            ]}
+          />
+
+          <div className="bg-white p-4 rounded border border-gray-200 h-80 flex flex-col">
+            <h3 className="text-sm font-medium text-gray-700 mb-4">
               Sessions by device type
             </h3>
             <p className="text-sm text-gray-400 justify-center items-center flex h-full">
@@ -125,6 +176,62 @@ const Analytics = () => {
           <div className="bg-white p-4 rounded border border-gray-200 h-80 flex flex-col">
             <h3 className="text-sm font-medium text-gray-700 mb-4">
               Sessions by landing page
+            </h3>
+            <p className="text-sm text-gray-400 justify-center items-center flex h-full">
+              There was no data found for this date range
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded border border-gray-200 h-80 flex flex-col">
+            <h3 className="text-sm font-medium text-gray-700 mb-4">
+              Customer cohort analysis
+            </h3>
+            <p className="text-sm text-gray-400 justify-center items-center flex h-full">
+              There was no data found for this date range
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded border border-gray-200 h-80 flex flex-col">
+            <h3 className="text-sm font-medium text-gray-700 mb-4">
+              Sales attributed to marketing
+            </h3>
+            <p className="text-sm text-gray-400 justify-center items-center flex h-full">
+              There was no data found for this date range
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded border border-gray-200 h-80 flex flex-col">
+            <h3 className="text-sm font-medium text-gray-700 mb-4">
+              Sessions by referrer
+            </h3>
+            <p className="text-sm text-gray-400 justify-center items-center flex h-full">
+              There was no data found for this date range
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded border border-gray-200 h-80 flex flex-col">
+            <h3 className="text-sm font-medium text-gray-700 mb-4">
+              Total sales by referrer
+            </h3>
+            <p className="text-sm text-gray-400 justify-center items-center flex h-full">
+              There was no data found for this date range
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded border border-gray-200 h-80 flex flex-col">
+            <h3 className="text-sm font-medium text-gray-700 mb-4">
+              Products by sell-throught rate
+            </h3>
+            <p className="text-sm text-gray-400 justify-center items-center flex h-full">
+              There was no data found for this date range
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded border border-gray-200 h-80 flex flex-col">
+            <h3 className="text-sm font-medium text-gray-700 mb-4">
+              POS staff sales total
+            </h3>
+            <p className="text-sm text-gray-400 justify-center items-center flex h-full">
+              There was no data found for this date range
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded border border-gray-200 h-80 flex flex-col">
+            <h3 className="text-sm font-medium text-gray-700 mb-4">
+              Total sales by POS location
             </h3>
             <p className="text-sm text-gray-400 justify-center items-center flex h-full">
               There was no data found for this date range
