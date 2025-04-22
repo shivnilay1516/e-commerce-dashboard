@@ -4,6 +4,7 @@ import { IoMdArrowUp } from "react-icons/io";
 import { IoMdArrowDown } from "react-icons/io";
 import { LuFilter } from "react-icons/lu";
 import { BiExport } from "react-icons/bi";
+import DiscountModal from "./DiscountModal";
 
 const discountdata = [
   {
@@ -110,6 +111,10 @@ const discountdata = [
 
 const Discount = () => {
   const [isOpen, setisOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => setModalOpen(true);
+  const handleCloseModal = () => setModalOpen(false);
 
   return (
     <div className="overflow-scroll md:overscroll-none w-full md:w-auto m-0 sm:m-1 md:m-2 lg:m-3">
@@ -119,16 +124,17 @@ const Discount = () => {
           <div className="flex gap-3">
             <Link
               href="/"
-              className=" bg-gray-200 text-gray-600 hover:text-gray-200 hover:bg-pink-600 py-1.5 px-3 flex items-center rounded text-sm"
+              className="bg-gray-200 text-gray-600 hover:text-gray-200 hover:bg-pink-600 py-1.5 px-3 flex items-center rounded text-sm"
             >
               <BiExport className="mr-2 font-bold" /> Export
             </Link>
-            <Link
-              href="/"
-              className=" bg-pink-600 text-gray-200 hover:bg-pink-400 py-1.5 px-3 flex items-center rounded text-sm"
+            <button
+              onClick={handleOpenModal}
+              className="bg-pink-600 text-white hover:bg-pink-500 py-2 px-4 rounded text-sm"
             >
               Create Discount
-            </Link>
+            </button>
+            {modalOpen && <DiscountModal onClose={handleCloseModal} />}
           </div>
         </div>
         <div className="mb-4 flex justify-between border-t border-b border-gray-300 py-4">
