@@ -209,8 +209,8 @@ const Products = () => {
               Filter <FaAngleDown className="ml-2" />
             </button>
             {isOpen && (
-              <div className="absolute right-0 top-[2.75rem] right-[0rem] py-3 pr-8 pl-2 bg-gray-100 border border-gray-300 rounded">
-                <h3 className="font-semibold text-xs">Sort By</h3>
+              <div className="absolute right-0 top-[2.75rem] right-[0rem] p-[16px] w-[60%] bg-gray-100 border border-gray-300 rounded">
+                <h3 className="font-semibold text-sm">Sort By</h3>
                 <div className="pl-1 flex flex-col text-gray-500 mt-1">
                   <label className="whitespace-nowrap py-1 text-sm flex items-center gap-2 cursor-pointer">
                     <input type="checkbox" className="accent-pink-500" />
