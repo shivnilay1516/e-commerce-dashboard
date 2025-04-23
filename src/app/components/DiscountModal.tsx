@@ -2,13 +2,13 @@ import { AiOutlineClose } from "react-icons/ai";
 import React from "react";
 import { IoPricetagOutline } from "react-icons/io5";
 import { FaAngleRight } from "react-icons/fa6";
-import Link from "next/link";
 
 interface DiscountModalProps {
   onClose: () => void;
+  onSelect: (type: string) => void;
 }
 
-const DiscountModal: React.FC<DiscountModalProps> = ({ onClose }) => {
+const DiscountModal: React.FC<DiscountModalProps> = ({ onClose, onSelect }) => {
   const discountOptions = [
     {
       title: "Amount off products",
@@ -50,12 +50,13 @@ const DiscountModal: React.FC<DiscountModalProps> = ({ onClose }) => {
           {discountOptions.map((item, idx) => (
             <div
               key={idx}
-              className="border border-gray-200 rounded-md lg:p-4 md:p-2 sm:p-2 p-2 hover:bg-gray-50 cursor-pointer"
+              className="border border-gray-200 rounded-md p-4 hover:bg-gray-50 cursor-pointer"
+              onClick={() => {
+                onSelect(item.title);
+                onClose();
+              }}
             >
-              <Link
-                href={item.link}
-                className="flex justify-between items-center"
-              >
+              <div className="flex justify-between items-center">
                 <div>
                   <p className="font-medium">{item.title}</p>
                   <p className="text-sm text-gray-500">{item.description}</p>
@@ -66,7 +67,7 @@ const DiscountModal: React.FC<DiscountModalProps> = ({ onClose }) => {
                   </span>
                   <FaAngleRight className="bounce-x" />
                 </div>
-              </Link>
+              </div>
             </div>
           ))}
         </div>

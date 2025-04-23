@@ -5,6 +5,7 @@ import { IoMdArrowDown } from "react-icons/io";
 import { LuFilter } from "react-icons/lu";
 import { BiExport } from "react-icons/bi";
 import DiscountModal from "./DiscountModal";
+import CreateDiscount from "./CreateDiscount";
 
 const discountdata = [
   {
@@ -112,9 +113,15 @@ const discountdata = [
 const Discount = () => {
   const [isOpen, setisOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-
+  const [selectedDiscountType, setSelectedDiscountType] = useState<
+    string | null
+  >(null);
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
+
+  if (selectedDiscountType === "Amount off products") {
+    return <CreateDiscount />;
+  }
 
   return (
     <div className="overflow-scroll md:overscroll-none w-full md:w-auto m-0 sm:m-1 md:m-2 lg:m-3">
@@ -134,7 +141,12 @@ const Discount = () => {
             >
               Create Discount
             </button>
-            {modalOpen && <DiscountModal onClose={handleCloseModal} />}
+            {modalOpen && (
+              <DiscountModal
+                onClose={handleCloseModal}
+                onSelect={(type) => setSelectedDiscountType(type)}
+              />
+            )}
           </div>
         </div>
         <div className="mb-4 flex justify-between border-t border-b border-gray-300 py-4">
