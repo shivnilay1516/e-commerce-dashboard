@@ -22,7 +22,7 @@ const Setting = () => {
   };
 
   return (
-    <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:m-0 md:m-5 sm:m-3 m-3">
+    <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:m-0 md:m-5 sm:m-3 m-3 min-w-[430px]">
       <div className="mb-8">
         <h3 className="font-medium text-base font-semibold"> Setting</h3>
         <div className="mt-4">

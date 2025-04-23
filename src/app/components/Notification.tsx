@@ -3,7 +3,7 @@ import { MdDeleteOutline } from "react-icons/md";
 
 const Notification = () => {
   return (
-    <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:m-0 md:m-3 sm:m-2 m-2 ">
+    <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:m-0 md:m-3 sm:m-2 m-2 min-w-[430px]">
       <h3 className="font-medium mb-8">All Notification</h3>
       <div className="mb-6 flex justify-between border-t border-b border-gray-300 items-center py-3">
         <p className="text-sm">100 Notification</p>

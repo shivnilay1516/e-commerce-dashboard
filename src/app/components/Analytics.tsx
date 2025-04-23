@@ -9,7 +9,7 @@ import ConversionRateBreakdownCard from "./ConversionRateBreakdownCard";
 
 const Analytics = () => {
   return (
-    <div className="overflow-scroll md:overscroll-none w-full md:w-auto m-0 sm:m-1 md:m-2 lg:m-3">
+    <div className="overflow-scroll md:overscroll-none w-full md:w-auto m-0 sm:m-1 md:m-2 lg:m-3 min-w-[430px]">
       <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:m-0 md:m-3 sm:m-2 m-2">
         <div className="mb-8 flex justify-between">
           <h3 className="font-medium">Analytics</h3>
