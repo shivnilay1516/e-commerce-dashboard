@@ -29,13 +29,13 @@ const Header: React.FC<HeaderProps> = ({
             }`}
           />
         </button>
-        <IoMdMail className="mx-2 cursor-pointer" />
+        <IoMdMail className="mx-2 cursor-pointer " />
         <Image
           src="/images/profile-icon.png"
           width={28}
           height={28}
           alt="profile-img"
-          className="rounded-[50%] border border-gray-600 mx-2 cursor-pointer"
+          className="rounded-[50%] border border-gray-600 mx-2 p-[2px] cursor-pointer"
         />
         <IoIosSettings className="mx-2 cursor-pointer" />
       </div>
