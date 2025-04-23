@@ -22,7 +22,7 @@ const Setting = () => {
   };
 
   return (
-    <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:my-0 md:my-5 sm:my-3 my-3">
+    <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:m-0 md:m-5 sm:m-3 m-3">
       <div className="mb-8">
         <h3 className="font-medium text-base font-semibold"> Setting</h3>
         <div className="mt-4">
@@ -65,6 +65,7 @@ const Setting = () => {
                   id=""
                   className="border border-gray-200 bg-gray-100 p-2 rounded focus:outline-none text-gray-500"
                 >
+                  <option value="united-state">select country</option>
                   <option value="united-state">United State</option>
                   <option value="india">India</option>
                   <option value="russia">Russia</option>
@@ -80,6 +81,7 @@ const Setting = () => {
                   id=""
                   className="border border-gray-200 bg-gray-100 p-2 rounded focus:outline-none text-gray-500"
                 >
+                  <option value="united-state">select currency</option>
                   <option value="united-state">US Doller $</option>
                   <option value="india">Rupee ₹ </option>
                   <option value="russia">Russia ₽</option>
@@ -112,7 +114,7 @@ const Setting = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="B-16, Sector-63 Noida"
+                  placeholder="B-16, Sector-63, Noida, Uttar Pradesh, 201301"
                   className="border border-gray-200 bg-gray-100 p-2 rounded focus:outline-none"
                 />
               </div>
@@ -271,7 +273,7 @@ const Setting = () => {
           </div>
         </div>
         <div className="flex lg:justify-end md:justify-center sm:justify-center mr-8 mt-6">
-          <button className="bg-pink-700 text-gray-200 hover:bg-pink-600 cursor-pointer lg:py-1.5 md:py-2.5 sm:py-2.5 lg:px-4 md:px-6 sm:px-6 rounded">
+          <button className="bg-pink-600 text-base text-gray-200 hover:bg-pink-500 cursor-pointer lg:py-1 md:py-2.5 sm:py-2.5 lg:px-4 md:px-6 sm:px-6 rounded">
             Save
           </button>
         </div>

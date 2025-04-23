@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { SlGraph } from "react-icons/sl";
 import {
   FaHome,
@@ -37,14 +37,10 @@ const menuItems: MenuItem[] = [
 
 type SidebarProps = {
   onSelect: (key: string) => void;
+  activeComponent: string;
 };
-function Sidebar({ onSelect }: SidebarProps) {
-  const [activeKey, setActiveKey] = useState("dashboard");
 
-  const handleClick = (key: string) => {
-    setActiveKey(key);
-    onSelect(key);
-  };
+function Sidebar({ onSelect, activeComponent }: SidebarProps) {
   return (
     <div className="bg-gray-100 w-[14rem] items-center flex flex-col">
       <h3 className="text-xl py-3 px-3 mb-10 w-full text-white font-semibold flex justify-center items-center bg-gradient-to-r from-[#ff3c7e] to-[#9d4edd]">
@@ -54,7 +50,7 @@ function Sidebar({ onSelect }: SidebarProps) {
       <div className="flex-1 overflow-y-auto h-full w-full">
         <ul className="text-gray-600">
           {menuItems.map((item) => {
-            const isActive = item.key === activeKey;
+            const isActive = item.key === activeComponent;
             return (
               <li key={item.key} className="my-2">
                 <div
@@ -64,7 +60,7 @@ function Sidebar({ onSelect }: SidebarProps) {
                         ? "border-l-4 text-[#ff3c7e] border-[#ff3c7e] bg-gray-200"
                         : "hover:border-l-4 hover:text-[#ff3c7e] hover:border-[#ff3c7e] hover:bg-gray-200"
                     }`}
-                  onClick={() => handleClick(item.key)}
+                  onClick={() => onSelect(item.key)}
                 >
                   {React.cloneElement(item.icon)}
                   <span className="ml-3">{item.name}</span>

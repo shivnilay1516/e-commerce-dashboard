@@ -18,7 +18,7 @@ const ConversionRate: React.FC<ConversionRateProps> = ({
       <h3 className="text-sm font-medium text-gray-600 mb-4">
         Sessions by location
       </h3>
-      <div className="text-2xl font-semibold text-gray-600 mb-2">
+      <div className="text-2xl font-semibold text-pink-600 mb-2">
         {value.toFixed(2)}% —
       </div>
       <div className="flex flex-col my-auto">
@@ -30,7 +30,7 @@ const ConversionRate: React.FC<ConversionRateProps> = ({
           >
             <polyline
               fill="none"
-              stroke="#3B82F6"
+              stroke="#e60076"
               strokeWidth="2"
               points={dataPoints
                 .map((val, i) => {
@@ -59,7 +59,7 @@ const ConversionRate: React.FC<ConversionRateProps> = ({
       </div>
 
       {/* Date */}
-      <div className="mt-3 text-xs text-blue-500 text-center">{date}</div>
+      <div className="mt-3 text-xs text-pink-500 text-center">{date}</div>
     </div>
   );
 };

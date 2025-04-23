@@ -38,7 +38,7 @@ const DiscountModal: React.FC<DiscountModalProps> = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/20">
-      <div className="bg-white rounded-lg w-[90%] max-w-md shadow-lg relative p-6 min-w-[600px]">
+      <div className="bg-white rounded-lg w-[90%] max-w-md shadow-lg relative lg:p-6 md:p-2 sm:p-3 p-3 lg:min-w-[600px] md:w-full sm:w-full w-full">
         <button
           className="absolute top-3 right-3 text-gray-500 hover:text-black"
           onClick={onClose}
@@ -50,7 +50,7 @@ const DiscountModal: React.FC<DiscountModalProps> = ({ onClose }) => {
           {discountOptions.map((item, idx) => (
             <div
               key={idx}
-              className="border border-gray-200 rounded-md p-4 hover:bg-gray-50 cursor-pointer"
+              className="border border-gray-200 rounded-md lg:p-4 md:p-2 sm:p-2 p-2 hover:bg-gray-50 cursor-pointer"
             >
               <Link
                 href={item.link}
@@ -60,8 +60,8 @@ const DiscountModal: React.FC<DiscountModalProps> = ({ onClose }) => {
                   <p className="font-medium">{item.title}</p>
                   <p className="text-sm text-gray-500">{item.description}</p>
                 </div>
-                <div className="flex gap-2 items-center">
-                  <span className="text-sm px-2.5 py-1.5 flex items-center bg-gray-200 rounded">
+                <div className="flex gap-2 items-center lg:text-sm md:text-xs sm:text-xs text-xs ml-1">
+                  <span className="px-2.5 py-1.5 flex items-center bg-gray-200 rounded">
                     <IoPricetagOutline className="mr-1" /> {item.type}
                   </span>
                   <FaAngleRight className="bounce-x" />

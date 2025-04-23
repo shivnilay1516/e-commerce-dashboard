@@ -7,16 +7,28 @@ import Image from "next/image";
 
 interface HeaderProps {
   onMenuClick: () => void;
+  onNotificationClick: () => void;
+  activeComponent: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
+const Header: React.FC<HeaderProps> = ({
+  onMenuClick,
+  onNotificationClick,
+  activeComponent,
+}) => {
   return (
-    <div className="py-3 bg-gray-100 justify-between flex text-gray-400 text-xl">
+    <div className="py-3 bg-gray-100 justify-between flex text-gray-600 text-xl">
       <button onClick={onMenuClick} className="text-2xl cursor-pointer ml-3">
         <IoMdMenu />
       </button>
       <div className="flex justify-end mr-6 items-center ">
-        <IoIosNotifications className="mx-2 cursor-pointer" />
+        <button onClick={onNotificationClick}>
+          <IoIosNotifications
+            className={`mx-2 cursor-pointer ${
+              activeComponent === "notifications" ? "text-pink-600" : ""
+            }`}
+          />
+        </button>
         <IoMdMail className="mx-2 cursor-pointer" />
         <Image
           src="/images/profile-icon.png"

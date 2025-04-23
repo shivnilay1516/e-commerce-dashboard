@@ -47,10 +47,19 @@ export default function Home() {
 
   return (
     <div className="flex h-screen m-3 rounded-xl overflow-hidden">
-      {isSidebarOpen && <Sidebar onSelect={setActiveComponent} />}
+      {isSidebarOpen && (
+        <Sidebar
+          onSelect={(key) => setActiveComponent(key)}
+          activeComponent={activeComponent}
+        />
+      )}
       <div className="flex-1 bg-gray-200 overflow-y-auto">
         <div className="sticky top-0 z-10 bg-gray-200 shadow">
-          <Header onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+          <Header
+            onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            onNotificationClick={() => setActiveComponent("notifications")}
+            activeComponent={activeComponent}
+          />
         </div>
         <div className="flex-1 overflow-y-auto p-1 sm:p-2 md:p-2 lg:p-4">
           {COMPONENTS_MAP[activeComponent] || <Dashboard />}

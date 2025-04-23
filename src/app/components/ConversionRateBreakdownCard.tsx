@@ -18,7 +18,7 @@ const ConversionRateBreakdownCard: React.FC<Props> = ({ totalRate, items }) => {
       <h3 className="text-sm font-medium text-gray-600 mb-4">
         Conversion rate breakdown
       </h3>
-      <div className="text-2xl font-bold text-gray-600 mb-4">
+      <div className="text-2xl font-bold text-pink-600 mb-4">
         {totalRate}% <span className="font-normal">—</span>
       </div>
       <div className="flex justify-between gap-4 text-xs text-gray-500">

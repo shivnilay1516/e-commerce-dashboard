@@ -10,7 +10,7 @@ import ConversionRateBreakdownCard from "./ConversionRateBreakdownCard";
 const Analytics = () => {
   return (
     <div className="overflow-scroll md:overscroll-none w-full md:w-auto m-0 sm:m-1 md:m-2 lg:m-3">
-      <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:my-0 md:my-3 sm:my-2 my-2">
+      <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:m-0 md:m-3 sm:m-2 m-2">
         <div className="mb-8 flex justify-between">
           <h3 className="font-medium">Analytics</h3>
           <div className="flex gap-3">
@@ -48,38 +48,38 @@ const Analytics = () => {
         </div>
         <div className="flex flex-wrap w-full my-2 pb-2">
           <div className="lg:w-1/4 md:w-1/2 w-full my-3">
-            <div className="p-3 text-gray-600 bg-gray-50 border border-gray-300 mx-2 rounded-xl h-full">
+            <div className="p-3 text-gray-600 bg-gray-50 border border-pink-400 mx-2 rounded-xl h-full">
               <h4 className="text-[13px]">Gross sales</h4>
               <div className="flex justify-between items-center mt-2">
                 <h3 className="text-base font-bold">$0-- </h3>
-                <p className="text-[11px]">______</p>
+                <p className="text-[11px] text-pink-400">dummy</p>
               </div>
             </div>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full my-3">
-            <div className="p-3 text-gray-600 bg-gray-50 border border-gray-300 mx-2 rounded-xl h-full">
+            <div className="p-3 text-gray-600 bg-gray-50 border border-pink-400 mx-2 rounded-xl h-full">
               <h4 className="text-[13px]">Returning customer rate</h4>
               <div className="flex justify-between items-center mt-2">
                 <h3 className="text-base font-bold">$0-- </h3>
-                <p className="text-[11px]">______</p>
+                <p className="text-[11px] text-pink-400">dummy</p>
               </div>
             </div>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full my-3">
-            <div className="p-3 text-gray-600 bg-gray-50 border border-gray-300 mx-2 rounded-xl h-full">
+            <div className="p-3 text-gray-600 bg-gray-50 border border-pink-400 mx-2 rounded-xl h-full">
               <h4 className="text-[13px]">Orders fulfilled</h4>
               <div className="flex justify-between items-center mt-2">
                 <h3 className="text-base font-bold">$0-- </h3>
-                <p className="text-[11px]">______</p>
+                <p className="text-[11px] text-pink-400">dummy</p>
               </div>
             </div>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full my-3">
-            <div className="p-3 text-gray-600 bg-gray-50 border border-gray-300 mx-2 rounded-xl h-full">
+            <div className="p-3 text-gray-600 bg-gray-50 border border-pink-400 mx-2 rounded-xl h-full">
               <h4 className="text-[13px]">Orders</h4>
               <div className="flex justify-between items-center mt-2">
                 <h3 className="text-base font-bold">$0-- </h3>
-                <p className="text-[11px]">______</p>
+                <p className="text-[11px] text-pink-400">dummy</p>
               </div>
             </div>
           </div>

@@ -118,7 +118,7 @@ const Discount = () => {
 
   return (
     <div className="overflow-scroll md:overscroll-none w-full md:w-auto m-0 sm:m-1 md:m-2 lg:m-3">
-      <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:my-0 md:my-3 sm:my-2 my-2 min-w-[720px]">
+      <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:m-0 md:m-3 sm:m-2 m-2 min-w-[720px]">
         <div className="mb-8 flex justify-between">
           <h3 className="font-medium">Discount</h3>
           <div className="flex gap-3">
@@ -241,7 +241,7 @@ const Discount = () => {
                     {item.description}
                   </div>
                 </td>
-                <td className="p-4 text-red-500">{item.status}</td>
+                <td className="p-4 text-pink-600">{item.status}</td>
                 <td className="p-4">{item.method}</td>
                 <td className="p-4">
                   <div>{item.type}</div>

@@ -50,12 +50,11 @@ export default function SaledData() {
   return (
     <div className="mb-4">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        {/* Chart Section */}
         <div className="col-span-2 bg-gray-50 p-4 rounded border border-gray-300">
           <h3 className="text-sm font-medium text-gray-600 border-b border-gray-300 pb-2 mb-2">
             Total sales over time
           </h3>
-          <p className="text-2xl font-semibold text-gray-600">₹0</p>
+          <p className="text-2xl font-semibold text-pink-600">₹0</p>
           <div className="h-64 border-t border-b border-gray-300 mt-4">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={salesData}>
@@ -65,7 +64,7 @@ export default function SaledData() {
                 <Line
                   type="monotone"
                   dataKey="amount"
-                  stroke="#3b82f6"
+                  stroke="#e60076"
                   strokeWidth={2}
                 />
               </LineChart>
@@ -77,8 +76,6 @@ export default function SaledData() {
             ))}
           </div>
         </div>
-
-        {/* Breakdown Section */}
         <div className="bg-white p-4 rounded shadow">
           <h3 className="text-sm font-medium text-gray-600 border-b border-gray-300 pb-2 mb-3">
             Total sales breakdown
@@ -93,8 +90,8 @@ export default function SaledData() {
                     : "font-semibold"
                 }`}
               >
-                <span className="text-gray-400">{label}</span>
-                <span>{value}</span>
+                <span className="text-pink-500">{label}</span>
+                <span className="text-pink-500">{value}</span>
               </li>
             ))}
           </ul>

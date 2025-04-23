@@ -116,7 +116,7 @@ const Order = () => {
 
   return (
     <div className="overflow-scroll md:overscroll-none w-full md:w-auto m-0 sm:m-1 md:m-2 lg:m-3">
-      <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:my-0 md:my-3 sm:my-2 my-2 min-w-[720px]">
+      <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:m-0 md:m-3 sm:m-2 m-2 min-w-[720px]">
         <div className="mb-8 flex justify-between">
           <h3 className="font-medium">Order</h3>
           <div className="flex gap-3">
@@ -255,13 +255,13 @@ const Order = () => {
                     <span
                       className={`px-2 py-1 rounded-full text-xs font-medium ${
                         prod.Status === "Shipped"
-                          ? "bg-blue-100 text-blue-600"
+                          ? "bg-blue-100 text-purple-600"
                           : prod.Status === "Processing"
                           ? "bg-yellow-100 text-yellow-600"
                           : prod.Status === "Delivered"
                           ? "bg-green-100 text-green-600"
                           : prod.Status === "Cancelled"
-                          ? "bg-red-100 text-red-600"
+                          ? "bg-red-100 text-pink-600"
                           : "bg-gray-100 text-gray-600"
                       }`}
                     >
