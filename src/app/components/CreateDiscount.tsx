@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Smile, AtSign, Hash, Link as LinkIcon } from "lucide-react";
-import Picker from "@emoji-mart/react";
-import data from "@emoji-mart/data";
+import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { IoDuplicateOutline } from "react-icons/io5";
 
@@ -34,12 +33,9 @@ const CreateDiscount = () => {
       setComment("");
     }
   };
-  type Emoji = {
-    native: string;
-  };
 
-  const addEmoji = (emoji: Emoji) => {
-    setComment((prev) => prev + emoji.native);
+  const addEmoji = (emojiData: EmojiClickData) => {
+    setComment((prev) => prev + emojiData.emoji);
     setShowEmojiPicker(false);
   };
 
@@ -264,7 +260,7 @@ const CreateDiscount = () => {
               </div>
             </div>
           </div>
-          <div className="border border-gray-300 rounded p-4">
+          {/* <div className="border border-gray-300 rounded p-4">
             <h4 className="text-gray-700 mb-2">Timeline</h4>
             <div className="mt-2 text-gray-500 flex items-start border-b border-gray-300 pb-1">
               <p className="py-1 px-1.5 text-sm bg-pink-600 rounded mr-2 text-gray-50">
@@ -296,6 +292,50 @@ const CreateDiscount = () => {
                   <LinkIcon className="w-4 h-4 cursor-pointer" />
                 </div>
 
+                <button
+                  className={`ml-auto px-3 py-1.5 text-sm rounded-md ${
+                    comment.trim()
+                      ? "bg-blue-500 text-white hover:bg-blue-600"
+                      : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                  }`}
+                  onClick={handlePost}
+                  disabled={!comment.trim()}
+                >
+                  Post
+                </button>
+              </div>
+            </div>
+          </div> */}
+          <div className="border border-gray-300 rounded p-4">
+            <h4 className="text-gray-700 mb-2">Timeline</h4>
+            <div className="mt-2 text-gray-500 flex items-start border-b border-gray-300 pb-1">
+              <p className="py-1 px-1.5 text-sm bg-pink-600 rounded mr-2 text-gray-50">
+                SS
+              </p>
+              <textarea
+                placeholder="Write a comment..."
+                className="w-full resize-none rounded-md text-sm focus:outline-none"
+                value={comment}
+                onChange={handleInput}
+                rows={2}
+              />
+            </div>
+            <div className="relative">
+              {showEmojiPicker && (
+                <div className="absolute bottom-16 left-2 z-50">
+                  <EmojiPicker onEmojiClick={addEmoji} height={350} />
+                </div>
+              )}
+              <div className="flex items-center justify-between mt-2">
+                <div className="flex items-center gap-2 text-gray-500">
+                  <Smile
+                    className="w-4 h-4 cursor-pointer"
+                    onClick={() => setShowEmojiPicker((prev) => !prev)}
+                  />
+                  <AtSign className="w-4 h-4 cursor-pointer" />
+                  <Hash className="w-4 h-4 cursor-pointer" />
+                  <LinkIcon className="w-4 h-4 cursor-pointer" />
+                </div>
                 <button
                   className={`ml-auto px-3 py-1.5 text-sm rounded-md ${
                     comment.trim()
