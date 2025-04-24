@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Smile, AtSign, Hash, Link as LinkIcon } from "lucide-react";
 import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { IoDuplicateOutline } from "react-icons/io5";
+import { IoCopyOutline } from "react-icons/io5";
+import { LuDot } from "react-icons/lu";
 
 const CreateDiscount = () => {
   const [code, setCode] = useState("");
   const [comment, setComment] = useState("");
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const codeRef = useRef<HTMLHeadingElement>(null);
 
   const generateCode = () => {
     const characters =
@@ -21,6 +25,19 @@ const CreateDiscount = () => {
       );
     }
     setCode(result);
+  };
+
+  const handleCopy = () => {
+    if (codeRef.current && code) {
+      navigator.clipboard.writeText(code);
+      setCopied(true);
+      codeRef.current.classList.add("bg-pink-400", "text-gray-200");
+
+      setTimeout(() => {
+        setCopied(false);
+        codeRef.current?.classList.remove("bg-pink-400", "text-gray-200");
+      }, 1000);
+    }
   };
 
   const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -46,20 +63,20 @@ const CreateDiscount = () => {
         <div className="flex gap-3">
           <Link
             href="/"
-            className=" bg-gray-200 text-gray-600 hover:text-gray-200 hover:bg-pink-600 py-1.5 px-3 flex items-center rounded text-sm"
+            className="bg-gray-200 text-gray-600 hover:text-gray-200 hover:bg-pink-600 py-1.5 px-3 flex items-center rounded text-sm"
           >
             <IoDuplicateOutline className="mr-1" /> Duplicate
           </Link>
           <Link
             href="/"
-            className=" bg-gray-200 text-gray-600 hover:text-gray-200 hover:bg-pink-600 py-1.5 px-3 flex items-center rounded text-sm"
+            className="bg-gray-200 text-gray-600 hover:text-gray-200 hover:bg-pink-600 py-1.5 px-3 flex items-center rounded text-sm"
           >
             Activate
           </Link>
         </div>
       </div>
       <div className="flex flex-col lg:flex-row justify-between mt-4 p-1 gap-y-5 lg: gap-y-0 items-start">
-        <div className="w-full mr-0 lg:w-[60%] lg:mr-5">
+        <div className="w-full mr-0 lg:w-[60%] lg:mr-5 border border-gray-300 rounded p-4">
           <div className="border border-gray-300 rounded p-4 mb-6">
             <div className="flex justify-between text-base mb-3 items-center">
               <h4 className="text-gray-700">Amount off products</h4>
@@ -77,8 +94,9 @@ const CreateDiscount = () => {
             <input
               type="text"
               value={code}
+              placeholder="Enter the code"
               onChange={(e) => setCode(e.target.value)}
-              className="border flex w-full border-gray-200 bg-gray-100 p-1.5 rounded focus:outline-none mb-1"
+              className="border flex w-full text-gray-400 border-gray-200 bg-gray-100 p-1.5 rounded focus:outline-none mb-1"
             />
             <p className="text-gray-400 text-[13px] mb-4">
               Customer must enter this code at checkout
@@ -260,52 +278,6 @@ const CreateDiscount = () => {
               </div>
             </div>
           </div>
-          {/* <div className="border border-gray-300 rounded p-4">
-            <h4 className="text-gray-700 mb-2">Timeline</h4>
-            <div className="mt-2 text-gray-500 flex items-start border-b border-gray-300 pb-1">
-              <p className="py-1 px-1.5 text-sm bg-pink-600 rounded mr-2 text-gray-50">
-                SS
-              </p>
-              <textarea
-                placeholder="Write a comment..."
-                className="w-full resize-none rounded-md text-sm focus:outline-none"
-                value={comment}
-                onChange={handleInput}
-                rows={2}
-              />
-            </div>
-            <div className="relative">
-              {showEmojiPicker && (
-                <div className="absolute bottom-16 left-2 z-50">
-                  <Picker data={data} onEmojiSelect={addEmoji} />
-                </div>
-              )}
-
-              <div className="flex items-center justify-between mt-2">
-                <div className="flex items-center gap-2 text-gray-500">
-                  <Smile
-                    className="w-4 h-4 cursor-pointer"
-                    onClick={() => setShowEmojiPicker((prev) => !prev)}
-                  />
-                  <AtSign className="w-4 h-4 cursor-pointer" />
-                  <Hash className="w-4 h-4 cursor-pointer" />
-                  <LinkIcon className="w-4 h-4 cursor-pointer" />
-                </div>
-
-                <button
-                  className={`ml-auto px-3 py-1.5 text-sm rounded-md ${
-                    comment.trim()
-                      ? "bg-blue-500 text-white hover:bg-blue-600"
-                      : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                  }`}
-                  onClick={handlePost}
-                  disabled={!comment.trim()}
-                >
-                  Post
-                </button>
-              </div>
-            </div>
-          </div> */}
           <div className="border border-gray-300 rounded p-4">
             <h4 className="text-gray-700 mb-2">Timeline</h4>
             <div className="mt-2 text-gray-500 flex items-start border-b border-gray-300 pb-1">
@@ -350,14 +322,82 @@ const CreateDiscount = () => {
               </div>
             </div>
           </div>
-          <p className="text-sm text-gray-400 mt-2 text-right">
+          <p className="text-sm text-pink-400 mt-3 text-right">
             Only you and other staff can see comments
           </p>
         </div>
-        <div className="w-full lg:w-[40%]  border border-gray-300 rounded p-5"></div>
+        <div className="w-full lg:w-[40%]  border border-gray-300 rounded p-5">
+          <div className="border border-gray-300 rounded p-4 mb-6">
+            <div className="flex justify-between items-start">
+              <div className="leading-[16px] mb-2">
+                <h4 className="text-gray-700 flex items-center py-1 rounded transition duration-300">
+                  <span ref={codeRef}>{code || "No discount code yet"}</span>
+                  <IoCopyOutline
+                    className={`ml-2 cursor-pointer text-gray-500 ${
+                      code
+                        ? "hover:text-black"
+                        : "opacity-30 cursor-not-allowed"
+                    }`}
+                    onClick={handleCopy}
+                    title={copied ? "Copied!" : "Copy code"}
+                  />
+                </h4>
+                <h6 className="text-gray-400">code</h6>
+              </div>
+              <p className="bg-gray-200 text-gray-500 hover:text-gray-200 hover:bg-pink-600 py-1.5 px-3 flex items-center rounded text-xs">
+                Expired
+              </p>
+            </div>
+            <h5 className="text-gray-600">Type </h5>
+            <p className="text-gray-400 mb-2 text-sm">Amount off products</p>
+            <h5 className="text-gray-600 mb-1">Details </h5>
+            <ul className="text-sm text-gray-500 gap-y-2 mb-2">
+              <li className="flex items-center">
+                <LuDot className="mr-1" />
+                For Online Store
+              </li>
+              <li className="flex items-center">
+                <LuDot className="mr-1" />
+                No minimum purchase requirement
+              </li>
+              <li className="flex items-center">
+                <LuDot className="mr-1" />
+                All customers
+              </li>
+              <li className="flex items-center">
+                <LuDot className="mr-1" />
+                No usage limits
+              </li>
+              <li className="flex items-center">
+                <LuDot className="mr-1" />
+                Can&#39;t combine with other discounts
+              </li>
+              <li className="flex items-center">
+                <LuDot className="mr-1" />
+                Active from today
+              </li>
+            </ul>
+            <h5 className="text-gray-600">Performance</h5>
+            <p className="text-gray-500 mb-3 text-sm flex items-center">
+              <LuDot className="mr-1" />0 used
+            </p>
+            <p className="text-sm text-pink-400 mt-2">
+              Only you and other staff can see comments
+            </p>
+          </div>
+          <div className="border border-gray-300 rounded p-4 mb-6">
+            <h4 className="text-gray-700">Sales channel access</h4>
+            <div className="mt-2 text-gray-500">
+              <label className="py-1 text-sm flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" className="accent-pink-500" />
+                Allow discount to be featured on selected channels
+              </label>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="flex items-center gap-4 justify-end mt-10">
+      <div className="flex items-center gap-4 justify-end my-4 mr-10">
         <Link
           href="/"
           className=" bg-gray-200 text-gray-600 hover:text-gray-200 hover:bg-pink-600 py-2 px-3 flex items-center rounded text-sm"
