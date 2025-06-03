@@ -25,7 +25,7 @@ const options = {
 
 export default function DoughnutChart() {
   return (
-    <div className="flex-shrink-0 w-full sm:basis-[100%] sm:w-[100%] md:basis-[100%] md:w-[100%] lg:basis-[30%] lg:w-[30%]">
+    <div className="flex-shrink-0 w-full sm:basis-[100%] sm:w-[100%] md:basis-[100%] md:w-[100%] lg:basis-[30%] lg:w-[30%] lg:ml-4 md:ml-0 sm:ml-0 ml-0">
       <div className="bg-gray-50 text-gray-600 p-4 rounded-xl lg:my-0 md:my-3 sm:my-2 my-2">
         <h2 className="text-base mb-4">Traffic</h2>
         <div className="flex justify-center my-10 py-4">

@@ -6,8 +6,8 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 
 const OrderStatus = () => {
   return (
-    <div className="overflow-scroll md:overscroll-none w-full md:w-auto">
-      <div className="flex-shrink-0 w-full sm:w-[100%] md:w-[100%] lg:w-[60%] min-w-[700px]">
+    <div className="overflow-scroll md:overscroll-none w-full lg:ml-4 md:ml-0 sm:ml-0 ml-0">
+      <div className="flex-shrink-0 w-full sm:w-[100%] md:w-[100%] lg:w-[100%] min-w-[700px]">
         <div className="bg-gray-50 text-gray-700 p-4 rounded-xl lg:my-0 md:my-3 sm:my-2 my-2">
           <h2 className="text-base">Order Status</h2>
           <p className="text-gray-400 text-xs mb-6">

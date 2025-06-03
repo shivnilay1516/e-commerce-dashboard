@@ -5,9 +5,9 @@ import StoreChart from "./StoreChart";
 
 const AllTracks = () => {
   return (
-    <div className="overflow-scroll md:overscroll-none w-full md:w-auto">
-      <div className="flex-shrink-0 w-full sm:w-[100%] md:w-[100%] lg:w-[70%] min-w-[820px] overflow-x-auto">
-        <div className="bg-gray-50 text-gray-600 p-5 rounded-xl lg:my-0 md:my-3 sm:my-2 my-2">
+    <div className="overflow-scroll md:overscroll-none w-full rounded-2xl">
+      <div className="flex-shrink-0 w-full sm:w-[100%] md:w-[100%] lg:w-[100%] min-w-[820px] overflow-x-auto bg-white">
+        <div className="text-gray-600 p-5 rounded-xl lg:my-0 md:my-3 sm:my-2 my-2">
           <div className="flex gap-2">
             <div className="">
               <h2 className="text-base">Dashboard</h2>
